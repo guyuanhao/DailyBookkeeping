@@ -1,27 +1,42 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import {
+  StackNavigator,
+} from 'react-navigation';
 
-import HomePage from './src/HomePage';
+import LoginPage from './src/LoginPage';
+import HomePage from "./src/HomePage";
+
+
+const RootStack = StackNavigator(
+  {
+    Home: {
+      screen: LoginPage,
+    },
+    Details:{
+      screen: HomePage,
+    },
+  },
+  {
+    initialRouteName: 'Home',
+  }
+);
 
 export default class App extends React.Component {
-
-
 
   render() {
 
     return (
-      <View style={styles.container}>
-        <HomePage />
-      </View>
+      <RootStack />
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     backgroundColor: '#fff',
+//     alignItems: 'center',
+//     justifyContent: 'center',
+//   },
+// });
