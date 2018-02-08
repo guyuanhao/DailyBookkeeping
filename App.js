@@ -4,8 +4,8 @@ import {
   StackNavigator,
 } from 'react-navigation';
 
-import LoginPage from './src/LoginPage';
-import HomePage from "./src/HomePage";
+import LoginPage from './src/components/LoginPage';
+import HomePage from "./src/components/HomePage";
 
 
 const RootStack = StackNavigator(
