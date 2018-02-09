@@ -14,9 +14,6 @@ const RootStack = StackNavigator(
     Login:{ screen: LoginPage},
     Home:{ screen: HomePage},
     Note:{ screen: NotePage}
-  },
-  {
-    headerMode: 'none',
   }
 );
 

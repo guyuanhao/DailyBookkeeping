@@ -1,9 +1,25 @@
 import React from 'react';
 import {StatusBar, TextInput, Button, StyleSheet, Text, View, Image, KeyboardAvoidingView, TouchableOpacity  } from 'react-native';
+import { NavigationActions } from 'react-navigation';
 
 import styles from "../styles";
 
 export default class LoginPage extends React.Component {
+
+  static navigationOptions = {
+    header: null,
+    title: 'Welcome',
+  };
+
+  goToHomePage = () =>{
+    const resetAction = NavigationActions.reset({
+      index: 0,
+      actions: [
+        NavigationActions.navigate({ routeName: 'Home' })
+      ],
+    });
+    this.props.navigation.dispatch(resetAction);
+  }
 
   render() {
 
@@ -39,7 +55,7 @@ export default class LoginPage extends React.Component {
             ref = {(input) => this.passwordInput = input}
           />
           <TouchableOpacity
-            onPress={() => this.props.navigation.navigate('Home')}
+            onPress={this.goToHomePage}
             style={styles.button}>
             <Text style={{color:"rgba(255,255,255, 1)", textAlign:"center", fontSize:22}}>LOGIN</Text>
           </TouchableOpacity> 
