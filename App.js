@@ -6,19 +6,17 @@ import {
 
 import LoginPage from './src/components/LoginPage';
 import HomePage from "./src/components/HomePage";
+import NotePage from './src/components/NotePage';
 
 
 const RootStack = StackNavigator(
   {
-    Home: {
-      screen: LoginPage,
-    },
-    Details:{
-      screen: HomePage,
-    },
+    Login:{ screen: LoginPage},
+    Home:{ screen: HomePage},
+    Note:{ screen: NotePage}
   },
   {
-    initialRouteName: 'Home',
+    headerMode: 'none',
   }
 );
 

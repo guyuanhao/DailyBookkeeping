@@ -1,12 +1,9 @@
 import React from 'react';
 import {StatusBar, TextInput, Button, StyleSheet, Text, View, Image, KeyboardAvoidingView, TouchableOpacity  } from 'react-native';
 
+import styles from "../styles";
 
 export default class LoginPage extends React.Component {
-
-  static navigationOptions = {
-    title: 'Login',
-  };
 
   render() {
 
@@ -42,9 +39,9 @@ export default class LoginPage extends React.Component {
             ref = {(input) => this.passwordInput = input}
           />
           <TouchableOpacity
-            onPress={() => this.props.navigation.navigate('Details')}
-            style={{backgroundColor:"#5B3256", paddingVertical:10}}>
-            <Text style={{color:"rgba(255,255,255, 1)", textAlign:"center"}}>LOGIN</Text>
+            onPress={() => this.props.navigation.navigate('Home')}
+            style={styles.button}>
+            <Text style={{color:"rgba(255,255,255, 1)", textAlign:"center", fontSize:22}}>LOGIN</Text>
           </TouchableOpacity> 
             
         </KeyboardAvoidingView>
@@ -56,30 +53,3 @@ export default class LoginPage extends React.Component {
 }
 
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#BE90D4'
-  },
-  logoContainer:{
-    flex:2,
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  formContainer:{
-    flex:3,
-    padding: 20,
-    justifyContent: 'center'
-  },
-  logo: {
-    width:100,
-    height:100
-  },
-  input : {
-    height : 40,
-    backgroundColor: 'rgba(255,255,255,0.2)',
-    marginBottom:20,
-    color:'#FFF',
-    paddingHorizontal:15
-  }
-});
